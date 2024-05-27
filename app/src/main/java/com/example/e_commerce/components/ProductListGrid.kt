@@ -34,7 +34,7 @@ fun GridItem(product: Product) {
         modifier = Modifier
             .padding(6.dp)
             .clickable { }
-            .width(100.dp)
+            .width(154.dp)
     ) {
         Column(
             modifier = Modifier.padding(8.dp)
@@ -45,7 +45,7 @@ fun GridItem(product: Product) {
                 contentDescription = product.name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(82.dp)
+                    .size(140.dp)
                     .clip(RoundedCornerShape(4.dp))
             )
             Text(
@@ -81,7 +81,7 @@ fun GridItem(product: Product) {
 @Composable
 fun ProductListGrid(products: List<Product>) {
     Column{
-        val rows = products.chunked(3)
+        val rows = products.chunked(2)
         rows.forEach { rowItems ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
