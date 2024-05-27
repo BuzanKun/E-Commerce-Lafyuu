@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.example.e_commerce.data.Product
 
 @Composable
-fun ProductItem(product: Product) {
+fun ListItem(product: Product) {
     OutlinedCard(
         shape = RoundedCornerShape(corner = CornerSize(4.dp)),
         modifier = Modifier
@@ -39,6 +39,7 @@ fun ProductItem(product: Product) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(8.dp)
+                .fillMaxWidth()
         ) {
             Image(
                 painter = painterResource(id = product.image),
@@ -81,10 +82,10 @@ fun ProductListRow(products: List<Product>) {
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(horizontal = 16.dp)
     ) {
         items(products) {product ->
-            ProductItem(product)
+            ListItem(product)
         }
     }
 }
