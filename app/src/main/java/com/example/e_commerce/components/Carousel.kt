@@ -44,7 +44,7 @@ fun Carousel() {
     Box(
         modifier = Modifier.fillMaxWidth()
             .padding(16.dp)
-            .clip(RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(4.dp))
             .height(160.dp)
     ){
         HorizontalPager(
