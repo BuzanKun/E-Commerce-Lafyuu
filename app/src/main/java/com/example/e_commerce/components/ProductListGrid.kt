@@ -15,13 +15,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,7 +37,6 @@ fun GridItem(product: Product) {
             .width(100.dp)
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(8.dp)
                 .fillMaxWidth()
         ) {
@@ -46,7 +45,7 @@ fun GridItem(product: Product) {
                 contentDescription = product.name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(60.dp)
+                    .size(82.dp)
                     .clip(RoundedCornerShape(4.dp))
             )
             Text(
@@ -55,15 +54,17 @@ fun GridItem(product: Product) {
                 fontSize = 16.sp
             )
             Text(
-                text = product.price,
-                textDecoration = TextDecoration.LineThrough,
+                text = product.discountedPrice,
                 color = Color.Gray,
-                fontSize = 12.sp
+                textAlign = TextAlign.Start,
+                fontSize = 14.sp
             )
             Row {
                 Text(
-                    text = product.discountedPrice,
+                    text = product.price,
                     color = Color.Gray,
+                    textDecoration = TextDecoration.LineThrough,
+                    textAlign = TextAlign.Start,
                     fontSize = 12.sp
                 )
                 Spacer(modifier = Modifier.width(4.dp))
