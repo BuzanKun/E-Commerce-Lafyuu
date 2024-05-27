@@ -12,12 +12,14 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.e_commerce.R
+import kotlinx.coroutines.delay
 
 @Composable
 fun Carousel() {
@@ -30,6 +32,15 @@ fun Carousel() {
     )
 
     val pagerState = rememberPagerState {products.size}
+
+    LaunchedEffect(pagerState) {
+        while (true) {
+            delay(3000)
+            val nextPage = (pagerState.currentPage + 1) % products.size
+            pagerState.animateScrollToPage(nextPage)
+        }
+    }
+
     Box(
         modifier = Modifier.fillMaxWidth()
             .padding(16.dp)
