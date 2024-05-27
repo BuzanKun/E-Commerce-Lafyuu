@@ -24,6 +24,11 @@ fun AccountScreen(navController: NavController) {
             GoBackHeader(title = "Account", navController)
         }
         Divider(color = Color.Gray, thickness = 0.5.dp)
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+
+        }
         Footer(navController)
     }
 }

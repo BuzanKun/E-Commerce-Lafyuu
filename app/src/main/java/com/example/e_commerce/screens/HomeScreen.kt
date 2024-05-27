@@ -24,6 +24,7 @@ fun HomeScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
             modifier = Modifier.verticalScroll(rememberScrollState())
+                .weight(1f)
         ) {
             Carousel()
             CategoryDivider(name = "Category", destination = "category", navController)

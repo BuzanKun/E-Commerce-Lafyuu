@@ -24,6 +24,11 @@ fun CartScreen(navController: NavController) {
             GoBackHeader(title = "Your Cart", navController)
         }
         Divider(color = Color.Gray, thickness = 0.5.dp)
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+
+        }
         Footer(navController)
     }
 }

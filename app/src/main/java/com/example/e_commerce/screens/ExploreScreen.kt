@@ -14,6 +14,11 @@ fun ExploreScreen(navController: NavController) {
         modifier = Modifier.fillMaxSize()
     ) {
         SearchHeader()
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+
+        }
         Footer(navController)
     }
 }

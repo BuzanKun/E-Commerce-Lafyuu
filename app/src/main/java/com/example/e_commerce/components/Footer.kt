@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Home
@@ -27,6 +28,7 @@ fun Footer(navController: NavController) {
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceEvenly,
         modifier = Modifier.fillMaxWidth()
+            .padding(vertical = 16.dp)
     ) {
         ButtonText(buttonImage = Icons.Outlined.Home, buttonName = "Home", destination = "home", navController)
         ButtonText(buttonImage = Icons.Outlined.Search, buttonName = "Explore", destination = "explore", navController)
@@ -39,7 +41,7 @@ fun Footer(navController: NavController) {
 @Composable
 fun ButtonText(buttonImage: ImageVector, buttonName: String, destination: String, navController: NavController) {
     Column(
-        verticalArrangement = Arrangement.spacedBy(4.dp),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .clickable { navController.navigate(destination) }
